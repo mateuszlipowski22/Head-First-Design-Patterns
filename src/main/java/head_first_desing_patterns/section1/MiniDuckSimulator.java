@@ -7,5 +7,13 @@ public class MiniDuckSimulator {
         wildDuck.executeFly();
         wildDuck.executeQuack();
         wildDuck.display();
+
+        System.out.println();
+
+        Duck modelDuck = new ModelDuck();
+        modelDuck.display();
+        modelDuck.executeFly();
+        modelDuck.setFlyingInterface(new FlyingWithRocket());
+        modelDuck.executeFly();
     }
 }

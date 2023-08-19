@@ -2,14 +2,14 @@ package head_first_desing_patterns.section1;
 
 public abstract class Duck {
 
-    FlyingInterface fLyingInterface;
+    FlyingInterface flyingInterface;
     QuackingInterface quackingInterface;
 
     public Duck() {
     }
 
     public void executeFly(){
-        fLyingInterface.fly();
+        flyingInterface.fly();
     }
 
     public void executeQuack(){
@@ -17,4 +17,12 @@ public abstract class Duck {
     }
 
     abstract void display();
+
+    public void setFlyingInterface(FlyingInterface flyingInterface) {
+        this.flyingInterface = flyingInterface;
+    }
+
+    public void setQuackingInterface(QuackingInterface quackingInterface) {
+        this.quackingInterface = quackingInterface;
+    }
 }

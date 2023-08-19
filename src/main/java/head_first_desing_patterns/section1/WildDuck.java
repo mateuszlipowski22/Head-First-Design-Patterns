@@ -4,7 +4,7 @@ public class WildDuck extends Duck{
 
     public WildDuck() {
         quackingInterface=new Quacking();
-        fLyingInterface=new Flying();
+        flyingInterface=new Flying();
     }
 
     @Override
