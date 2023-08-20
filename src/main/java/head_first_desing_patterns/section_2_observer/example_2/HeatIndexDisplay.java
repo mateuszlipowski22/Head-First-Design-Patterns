@@ -1,18 +1,24 @@
-package head_first_desing_patterns.section_2_observer;
+package head_first_desing_patterns.section_2_observer.example_2;
 
+
+import java.util.Observable;
+import java.util.Observer;
 
 public class HeatIndexDisplay implements Observer, DisplayElement {
 	float heatIndex = 0.0f;
-	private WeatherData weatherData;
+	private Observable weatherData;
 
 	public HeatIndexDisplay(WeatherData weatherData) {
 		this.weatherData = weatherData;
-		weatherData.subscribeObserver(this);
+		weatherData.addObserver(this);
 	}
 
-	public void update(float t, float rh, float pressure) {
-		heatIndex = computeHeatIndex(t, rh);
-		display();
+	public void update(Observable observable, Object arg) {
+		if(observable instanceof WeatherData){
+			WeatherData weatherData = (WeatherData) observable;
+			heatIndex = computeHeatIndex(weatherData.getTemperature(),weatherData.getHumidity());
+			display();
+		}
 	}
 	
 	private float computeHeatIndex(float t, float rh) {

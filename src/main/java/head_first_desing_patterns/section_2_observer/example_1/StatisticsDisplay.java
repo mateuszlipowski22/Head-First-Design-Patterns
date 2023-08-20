@@ -1,4 +1,4 @@
-package head_first_desing_patterns.section_2_observer;
+package head_first_desing_patterns.section_2_observer.example_1;
 
 public class StatisticsDisplay implements Observer, DisplayElement {
 	private float maxTemp = 0.0f;
