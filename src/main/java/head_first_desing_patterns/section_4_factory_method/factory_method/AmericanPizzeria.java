@@ -1,22 +1,23 @@
-package head_first_desing_patterns.section_4_factory_method;
+package head_first_desing_patterns.section_4_factory_method.factory_method;
 
-public class ItalianPizzeria extends Pizzeria{
+public class AmericanPizzeria extends Pizzeria{
+
     @Override
     protected Pizza getPizza(String type) {
         Pizza pizza=null;
 
         switch (type.toLowerCase()){
             case "cheese":
-                pizza=new ItalianCheesePizza();
+                pizza=new AmericanCheesePizza();
                 break;
             case "pepperoni":
-                pizza=new ItalianPepperoniPizza();
+                pizza=new AmericanPepperoniPizza();
                 break;
             case "seafood":
-                pizza=new ItalianSeafoodPizza();
+                pizza=new AmericanSeafoodPizza();
                 break;
             case "vege":
-                pizza=new ItalianVegePizza();
+                pizza=new AmericanVegePizza();
                 break;
         }
         return pizza;
