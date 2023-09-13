@@ -28,4 +28,8 @@ public class DinnerMenu {
     public MenuPosition[] getMenuPositions() {
         return menuPositions;
     }
+
+    public Iterator<MenuPosition> getIterator(){
+        return new DinerMenuIterator(this.menuPositions);
+    }
 }

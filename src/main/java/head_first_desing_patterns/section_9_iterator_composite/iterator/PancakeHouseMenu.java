@@ -24,4 +24,8 @@ public class PancakeHouseMenu {
     public List<MenuPosition> getMenuPositions() {
         return menuPositions;
     }
+
+    public Iterator<MenuPosition> getIterator(){
+        return new PancakeHouseMenuIterator(menuPositions);
+    }
 }
