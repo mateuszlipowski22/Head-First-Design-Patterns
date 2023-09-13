@@ -5,21 +5,27 @@ import java.util.Iterator;
 public class Waitress {
     private Menu pancakeHouseMenu;
     private Menu dinnerMenu;
+    private Menu jacksMenu;
 
-    public Waitress(Menu pancakeHouseMenu, Menu dinnerMenu) {
+    public Waitress(Menu pancakeHouseMenu, Menu dinnerMenu, Menu jacksMenu) {
         this.pancakeHouseMenu = pancakeHouseMenu;
         this.dinnerMenu = dinnerMenu;
+        this.jacksMenu = jacksMenu;
     }
 
     public void printMenu() {
         Iterator<MenuPosition> pancakeHouseMenuIterator = pancakeHouseMenu.getIterator();
-        Iterator<MenuPosition> dinerMenuIterator = dinnerMenu.getIterator();
+        Iterator<MenuPosition> dinnerMenuIterator = dinnerMenu.getIterator();
+        Iterator<MenuPosition> jacksMenuIterator = jacksMenu.getIterator();
 
         System.out.println("\nMenu śniadaniowe");
         printMenu(pancakeHouseMenuIterator);
 
+        System.out.println("\nMenu lunchowe");
+        printMenu(dinnerMenuIterator);
+
         System.out.println("\nMenu obiadowe");
-        printMenu(dinerMenuIterator);
+        printMenu(jacksMenuIterator);
     }
 
     private void printMenu(Iterator<MenuPosition> iterator) {
@@ -32,7 +38,7 @@ public class Waitress {
     }
 
     private void printMenuPosition(MenuPosition menuPosition, int i) {
-        System.out.printf("%d. %-30s : %-80s  : %4.2f  \n", i, menuPosition.getName(), menuPosition.getDescription(), menuPosition.getPrice());
+        System.out.printf("%d. %-35s : %-80s  : %4.2f  \n", i, menuPosition.getName(), menuPosition.getDescription(), menuPosition.getPrice());
     }
 
 }
