@@ -1,31 +1,22 @@
 package head_first_desing_patterns.section_9_iterator_composite.iterator;
 
 import java.util.Iterator;
+import java.util.List;
 
 public class Waitress {
-    private Menu pancakeHouseMenu;
-    private Menu dinnerMenu;
-    private Menu jacksMenu;
+    private List<Menu> menus;
 
-    public Waitress(Menu pancakeHouseMenu, Menu dinnerMenu, Menu jacksMenu) {
-        this.pancakeHouseMenu = pancakeHouseMenu;
-        this.dinnerMenu = dinnerMenu;
-        this.jacksMenu = jacksMenu;
+    public Waitress(List<Menu> menus) {
+        this.menus = menus;
     }
 
     public void printMenu() {
-        Iterator<MenuPosition> pancakeHouseMenuIterator = pancakeHouseMenu.getIterator();
-        Iterator<MenuPosition> dinnerMenuIterator = dinnerMenu.getIterator();
-        Iterator<MenuPosition> jacksMenuIterator = jacksMenu.getIterator();
-
-        System.out.println("\nMenu śniadaniowe");
-        printMenu(pancakeHouseMenuIterator);
-
-        System.out.println("\nMenu lunchowe");
-        printMenu(dinnerMenuIterator);
-
-        System.out.println("\nMenu obiadowe");
-        printMenu(jacksMenuIterator);
+        Iterator<Menu> iteratorMenu = menus.iterator();
+        while (iteratorMenu.hasNext()){
+            Menu menu = iteratorMenu.next();
+            System.out.println("\nMenu "+menu.getClass().getSimpleName().replaceAll("Menu", ""));
+            printMenu(menu.getIterator());
+        }
     }
 
     private void printMenu(Iterator<MenuPosition> iterator) {
