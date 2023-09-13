@@ -1,10 +1,12 @@
 package head_first_desing_patterns.section_9_iterator_composite.iterator;
 
-public class Waitress {
-    private PancakeHouseMenu pancakeHouseMenu;
-    private DinnerMenu dinnerMenu;
+import java.util.Iterator;
 
-    public Waitress(PancakeHouseMenu pancakeHouseMenu, DinnerMenu dinnerMenu) {
+public class Waitress {
+    private Menu pancakeHouseMenu;
+    private Menu dinnerMenu;
+
+    public Waitress(Menu pancakeHouseMenu, Menu dinnerMenu) {
         this.pancakeHouseMenu = pancakeHouseMenu;
         this.dinnerMenu = dinnerMenu;
     }

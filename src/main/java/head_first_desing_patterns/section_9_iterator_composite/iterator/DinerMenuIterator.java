@@ -1,6 +1,8 @@
 package head_first_desing_patterns.section_9_iterator_composite.iterator;
 
-public class DinerMenuIterator implements Iterator<MenuPosition>{
+import java.util.Iterator;
+
+public class DinerMenuIterator implements Iterator<MenuPosition> {
     private MenuPosition[] menuPositions;
     private int position;
 
@@ -19,5 +21,19 @@ public class DinerMenuIterator implements Iterator<MenuPosition>{
         MenuPosition menuPosition=menuPositions[position];
         position++;
         return menuPosition;
+    }
+
+    @Override
+    public void remove() {
+        if(position<=0){
+            throw new IllegalStateException("Nie można usunąc elementu przed pierwszym wywołaniem metody next()");
+        }
+
+        if(menuPositions[position-1]!=null){
+            for (int i=position-1; i< menuPositions.length-1;i++){
+                menuPositions[i]=menuPositions[i+1];
+            }
+            menuPositions[menuPositions.length-1]=null;
+        }
     }
 }

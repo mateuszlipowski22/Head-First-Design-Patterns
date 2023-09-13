@@ -1,6 +1,8 @@
 package head_first_desing_patterns.section_9_iterator_composite.iterator;
 
-public class DinnerMenu {
+import java.util.Iterator;
+
+public class DinnerMenu implements Menu{
     static final int MAX_NUMBER_OF_ELEMENTS=6;
     int numberOfElement=0;
     private MenuPosition[] menuPositions;

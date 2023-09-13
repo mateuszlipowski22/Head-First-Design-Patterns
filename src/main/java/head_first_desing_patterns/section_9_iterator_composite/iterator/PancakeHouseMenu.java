@@ -1,9 +1,10 @@
 package head_first_desing_patterns.section_9_iterator_composite.iterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class PancakeHouseMenu {
+public class PancakeHouseMenu implements Menu{
     private List<MenuPosition> menuPositions;
 
     public PancakeHouseMenu() {
@@ -26,6 +27,6 @@ public class PancakeHouseMenu {
     }
 
     public Iterator<MenuPosition> getIterator(){
-        return new PancakeHouseMenuIterator(menuPositions);
+        return menuPositions.iterator();
     }
 }
