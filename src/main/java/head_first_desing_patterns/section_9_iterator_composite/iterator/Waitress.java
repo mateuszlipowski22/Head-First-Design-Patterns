@@ -16,17 +16,16 @@ public class Waitress {
         Iterator<MenuPosition> dinerMenuIterator = dinnerMenu.getIterator();
 
         System.out.println("\nMenu śniadaniowe");
-        int i=1;
-        while(pancakeHouseMenuIterator.hasNext()){
-            MenuPosition menuPosition = pancakeHouseMenuIterator.next();
-            printMenuPosition(menuPosition, i );
-            i++;
-        }
+        printMenu(pancakeHouseMenuIterator);
 
-        i=1;
         System.out.println("\nMenu obiadowe");
-        while(dinerMenuIterator.hasNext()){
-            MenuPosition menuPosition = dinerMenuIterator.next();
+        printMenu(dinerMenuIterator);
+    }
+
+    private void printMenu(Iterator<MenuPosition> iterator) {
+        int i=1;
+        while(iterator.hasNext()){
+            MenuPosition menuPosition = iterator.next();
             printMenuPosition(menuPosition, i );
             i++;
         }
