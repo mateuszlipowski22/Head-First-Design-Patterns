@@ -1,4 +1,4 @@
-package head_first_desing_patterns.template_method.coffee_exapme_with_handler;
+package head_first_desing_patterns.section_8_template_method.coffee_exapme_with_handler;
 
 import java.io.BufferedReader;
 import java.io.IOException;

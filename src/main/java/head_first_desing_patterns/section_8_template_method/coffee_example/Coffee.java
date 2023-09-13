@@ -1,4 +1,4 @@
-package head_first_desing_patterns.template_method.coffee_example;
+package head_first_desing_patterns.section_8_template_method.coffee_example;
 
 public class Coffee extends DrinkWithCaffeine{
     @Override

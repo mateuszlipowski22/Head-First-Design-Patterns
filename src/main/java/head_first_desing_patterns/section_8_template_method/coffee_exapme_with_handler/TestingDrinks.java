@@ -1,15 +1,15 @@
-package head_first_desing_patterns.template_method.coffee_example;
+package head_first_desing_patterns.section_8_template_method.coffee_exapme_with_handler;
 
 public class TestingDrinks {
 
     public static void main(String[] args) {
 
-        Tea tea = new Tea();
+        TeaWithHandler tea = new TeaWithHandler();
         tea.brewingRecipe();
 
         System.out.println("________________________");
 
-        Coffee coffee = new Coffee();
+        CoffeeWithHandler coffee = new CoffeeWithHandler();
         coffee.brewingRecipe();
 
     }

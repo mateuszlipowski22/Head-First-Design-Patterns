@@ -1,18 +1,12 @@
-package head_first_desing_patterns.template_method.coffee_exapme_with_handler;
+package head_first_desing_patterns.section_8_template_method.coffee_example;
 
-public abstract class DrinkWithCaffeineWithHandler {
+public abstract class DrinkWithCaffeine {
 
     public final void brewingRecipe(){
         boilingWater();
         brewing();
         fillingTheCup();
-        if(customerWantsExtras()){
-            addingExtras();
-        }
-    }
-
-    protected boolean customerWantsExtras() {
-        return true;
+        addingExtras();
     }
 
     protected abstract void addingExtras();
