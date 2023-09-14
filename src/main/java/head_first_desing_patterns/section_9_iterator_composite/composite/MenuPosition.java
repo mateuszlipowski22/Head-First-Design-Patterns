@@ -1,5 +1,7 @@
 package head_first_desing_patterns.section_9_iterator_composite.composite;
 
+import java.util.Iterator;
+
 public class MenuPosition extends MenuElement{
     private String name;
     private String description;
@@ -36,5 +38,10 @@ public class MenuPosition extends MenuElement{
     @Override
     public void print() {
         System.out.printf("%-35s %s : %-80s  : %4.2f  \n", this.getName(), isVegetarian ? "(w)":"" , this.getDescription(), this.getPrice());
+    }
+
+    @Override
+    public Iterator<MenuElement> getIterator() {
+        return new EmptyIterator();
     }
 }

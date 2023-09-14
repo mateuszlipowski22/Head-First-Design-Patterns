@@ -1,5 +1,7 @@
 package head_first_desing_patterns.section_9_iterator_composite.composite;
 
+import java.util.Iterator;
+
 public abstract class MenuElement {
 
     public void add(MenuElement menuElement){
@@ -31,6 +33,10 @@ public abstract class MenuElement {
     }
 
     public void print(){
+        throw new UnsupportedOperationException();
+    }
+
+    public Iterator<MenuElement> getIterator(){
         throw new UnsupportedOperationException();
     }
 }

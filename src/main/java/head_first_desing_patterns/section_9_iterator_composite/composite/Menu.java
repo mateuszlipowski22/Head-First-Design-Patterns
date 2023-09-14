@@ -50,4 +50,9 @@ public class Menu extends MenuElement {
             menuElement.print();
         }
     }
+
+    @Override
+    public Iterator<MenuElement> getIterator() {
+        return new CompositeIterator(menuElements.iterator());
+    }
 }
